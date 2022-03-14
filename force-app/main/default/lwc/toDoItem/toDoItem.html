@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout key={item.Id} horizontal-align="spread" vertical-align="start">
+        <lightning-layout-item padding="around-small" size="10">
+            <lightning-input value={item.Item_Description__c} data-field="ItemDescription"
+                onchange={handleInputChange} padding="around-small" variant="label-hidden">
+            </lightning-input>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small" size="1">
+            <lightning-button variant="brand-outline" data-id={item.Id} label="Update" title="Primary action" onclick={updateItem}>
+            </lightning-button>
+        </lightning-layout-item>
+        <lightning-layout-item padding="around-small" size="1">
+            <lightning-button variant="destructive" data-id={item.Id} label="Delete" title="Primary action" onclick={deleteItem}>
+            </lightning-button>
+        </lightning-layout-item>
+
+    </lightning-layout>
+</template>
