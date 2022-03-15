@@ -39,7 +39,7 @@ export default class ToDoContainer extends LightningElement {
         }
     }*/
 
-    handleSuccess() {
+    /*handleSuccess() {
         if (this.recordId !== null) {
             this.dispatchEvent(new ShowToastEvent({
                 title: "SUCCESS!",
@@ -48,8 +48,9 @@ export default class ToDoContainer extends LightningElement {
             }),
             );
         }
+        this.template.querySelector('lightning-input').value = null;
         refreshApex(this._wiredItems);
-    }
+    }*/
 
     handleInputChange(event) {
         this.newItemValue = event.target.value;
@@ -68,8 +69,9 @@ export default class ToDoContainer extends LightningElement {
                         title: 'Success',
                         message: 'Item created',
                         variant: 'success',
-                    }),
+                    })
                 );
+                this.template.querySelector('lightning-input').value = null;
                 refreshApex(this._wiredItems);
             })
             .catch(error => {
@@ -78,7 +80,7 @@ export default class ToDoContainer extends LightningElement {
                         title: 'Error creating record',
                         message: error.body.message,
                         variant: 'error',
-                    }),
+                    })
                 );
             });
     }
