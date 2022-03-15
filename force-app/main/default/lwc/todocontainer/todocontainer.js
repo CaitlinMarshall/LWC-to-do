@@ -2,12 +2,12 @@ import { LightningElement, api, wire, track } from 'lwc';
 import getItemList from '@salesforce/apex/ToDoItemHelper.getItemList';
 import TO_DO_ITEM from '@salesforce/schema/To_Do_Item__c';
 import ITEM_DESCRIPTION from '@salesforce/schema/To_Do_Item__c.Item_Description__c';
-import ITEM_ID from '@salesforce/schema/To_Do_Item__c.Id';
+//import ITEM_ID from '@salesforce/schema/To_Do_Item__c.Id';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { refreshApex } from '@salesforce/apex';
 import { createRecord } from 'lightning/uiRecordApi';
-import { updateRecord } from 'lightning/uiRecordApi';
-import { deleteRecord } from 'lightning/uiRecordApi';
+//import { updateRecord } from 'lightning/uiRecordApi';
+//import { deleteRecord } from 'lightning/uiRecordApi';
 
 export default class ToDoContainer extends LightningElement {
 
@@ -83,6 +83,7 @@ export default class ToDoContainer extends LightningElement {
             });
     }
 
+    /*
     updateItem(event) {
         console.log("started update item");
         const allValid = [...this.template.querySelectorAll('lightning-input')]
@@ -160,6 +161,7 @@ export default class ToDoContainer extends LightningElement {
                     );
                 });
         }
+        */
     
 
 }
