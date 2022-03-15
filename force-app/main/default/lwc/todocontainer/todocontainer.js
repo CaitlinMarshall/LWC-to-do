@@ -83,6 +83,9 @@ export default class ToDoContainer extends LightningElement {
             });
     }
 
+    handleRefreshRequest(event){
+        refreshApex(this._wiredItems);
+    }
     /*
     updateItem(event) {
         console.log("started update item");

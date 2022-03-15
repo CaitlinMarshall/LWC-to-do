@@ -19,7 +19,7 @@
         </lightning-layout>
 
         <template for:each={itemList} for:item="item">
-            <c-to-Do-Item key={item.Id} item={item}>
+            <c-to-Do-Item key={item.Id} item={item} onrefresh={handleRefreshRequest}>
             </c-to-Do-Item>
         </template>
 

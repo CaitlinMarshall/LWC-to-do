@@ -17,6 +17,11 @@ handleInputChange(event) {
     console.log(event.target.value);
 }
 
+refreshRequest(){
+    const refreshEvent = new Event('refresh');
+    this.dispatchEvent(refreshEvent);
+}
+
 updateItem(event) {
     console.log("started update item");
     const allValid = [...this.template.querySelectorAll('lightning-input')]
@@ -44,7 +49,7 @@ updateItem(event) {
                     })
                 );
                 // Display fresh data in the form
-                return refreshApex(this._wiredItems);
+                //return refreshApex(this._wiredItems);
             })
             .catch(error => {
                 console.lorg(error);
@@ -82,7 +87,8 @@ deleteItem(event) {
                     })
                 );
                 // Display fresh data in the form
-                return refreshApex(this._wiredItems);
+                //return refreshApex(this._wiredItems);
+                this.refreshRequest();
 
             })
             .catch(error => {
